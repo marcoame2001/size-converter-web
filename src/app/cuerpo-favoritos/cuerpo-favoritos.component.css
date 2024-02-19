@@ -1,0 +1,105 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+.valoracion{
+    margin-left:50%;
+}
+
+.estrellas{
+  margin-left:45%;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td, th {
+  width: 25%;
+}
+
+.container {
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.cuerpo{  
+  margin-top: -12px;
+  position: relative;
+  display: table;
+  position: relative;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 1000px;
+}
+
+.rate-area {
+  float:left;
+  border-style: none;
+  margin-left: -7%;
+}
+
+.rate-area:not(:checked) > input {
+  position:absolute;
+  top:-9999px;
+  clip:rect(0,0,0,0);
+}
+
+.rate-area:not(:checked) > label {
+  float: right;
+  width: .80em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 40px;
+  line-height: 32px;
+  color: lightgrey;
+  margin-bottom: 10px !important;
+}
+
+.rate-area:not(:checked) > label:before {
+  content: '★';
+}
+
+.rate-area > input:checked ~ label {
+  color: gold;
+  text-shadow: none;
+}
+
+.rate-area:not(:checked) > label:hover,
+.rate-area:not(:checked) > label:hover ~ label {
+  color: gold;
+  
+}
+
+.rate-area > input:checked + label:hover,
+.rate-area > input:checked + label:hover ~ label,
+.rate-area > input:checked ~ label:hover,
+.rate-area > input:checked ~ label:hover ~ label,
+.rate-area > label:hover ~ input:checked ~ label {
+  color: gold;
+  text-shadow: none;
+  
+}
+
+.rate-area > label:active {
+  position:relative;
+  top:0px;
+  left:0px; 
+}
+
+.val{
+  margin-top: -10px;
+  margin-left: -10%;
+}
+
+.mat-table {
+  max-width: 80%;
+  margin-left: 10%;
+}

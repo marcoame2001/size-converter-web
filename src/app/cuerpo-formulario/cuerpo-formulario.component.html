@@ -1,0 +1,83 @@
+<section class="cuerpo">
+  <h1>Introduzca el formato o marca de origen y destino</h1>
+  <mat-grid-list class="marca" cols="1" rowHeight="100px">
+    <mat-grid-tile>
+      <mat-form-field appearance="fill">
+        <mat-label>Seleccione la marca de orígen</mat-label>
+        <mat-select [(ngModel)]="m_origen">
+          <mat-option value="X">X</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-form-field appearance="fill">
+        <mat-label>Seleccione la marca de destino</mat-label>
+        <mat-select [(ngModel)]="m_destino">
+          <mat-option value="X">X</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <mat-grid-list class="formato" cols="1" rowHeight="100px">
+    <mat-grid-tile>
+      <mat-form-field appearance="fill">
+        <mat-label>Seleccione el formato de orígen</mat-label>
+        <mat-select [(ngModel)]="f_origen">
+          <mat-option value="Europeo">Europeo</mat-option>
+          <mat-option value="Italiano">Italiano</mat-option>
+          <mat-option value="Americano">Americano</mat-option>
+          <mat-option value="Británico">Británico</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-grid-tile>
+  
+    <mat-grid-tile>
+      <mat-form-field appearance="fill">
+        <mat-label>Seleccione el formato de destino</mat-label>
+        <mat-select [(ngModel)]="f_destino">
+          <mat-option value="Europeo">Europeo</mat-option>
+          <mat-option value="Italiano">Italiano</mat-option>
+          <mat-option value="Americano">Americano</mat-option>
+          <mat-option value="Británico">Británico</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-grid-tile>
+  </mat-grid-list>
+  
+  <h2>Introduzca su talla y el tipo de ropa que desee</h2>
+  <mat-grid-list cols="2" rowHeight="80px">
+    <mat-grid-tile [colspan]="2">
+      <mat-form-field >
+        <input matInput min=1 [(ngModel)]="valor1" type="number">
+      </mat-form-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="2">
+      <mat-radio-group aria-label="Select an option" [(ngModel)]="tipo">
+        <mat-radio-button value="niño">Niño</mat-radio-button>
+        <mat-radio-button class="dos" value="mujer">Mujer </mat-radio-button>
+        <mat-radio-button class="dos" value="hombre">Hombre </mat-radio-button>
+      </mat-radio-group>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="2">
+      <button mat-raised-button color="primary" type="submit" (click)="convertir()">Convertir <mat-icon>swap_horizontal_circle</mat-icon></button>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="2" *ngIf="mostrar_marca">
+      <mat-card-title>Su talla es: {{resultado}} para la marca {{m_destino}} de {{tipo}}.</mat-card-title>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="2" *ngIf="mostrar">
+      <mat-card-title>Su talla es: {{resultado}} para el formato {{f_destino}} de {{tipo}}.</mat-card-title>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div *ngIf="mostrar">
+    <app-cuerpo-favoritos [f_origen]="f_origen" [f_destino]="f_destino" [res]="resultado"></app-cuerpo-favoritos>
+  </div>
+</section>

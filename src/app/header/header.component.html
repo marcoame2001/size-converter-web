@@ -1,0 +1,38 @@
+<p>
+    <mat-toolbar color="accent" class="mat-elevation-z6" [style.background]="'black'" routerLink="/" id="boton_inicio">
+    <span routerLink="/" id="texto_inicio"><mat-icon>swap_horizontal_circle</mat-icon></span> <span>SizeConverter</span>
+    <div class="spacer"></div>
+    <div class="headerbuttons">
+        <ul>
+            <a mat-button routerLink="/">Home</a>
+            <a mat-button>Guide</a>
+            <a mat-button>About Us</a>
+            <a mat-button>Contact Us</a>
+        </ul>
+    </div>  
+
+    <span class="example-spacer"></span>
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>menu</mat-icon>
+    </button>
+        <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+            <mat-icon>login</mat-icon>
+            <span>Iniciar Sesión</span>
+        </button>
+        <button mat-menu-item>
+            <mat-icon>logout</mat-icon>
+            <span>Cerrar Sesión</span>
+        </button>
+        <button mat-menu-item>
+            <mat-icon>input</mat-icon>
+            <span>Registrarse</span>
+        </button>
+        <button mat-menu-item>
+            <mat-icon>favorite</mat-icon>
+            <span>Favoritos</span>
+        </button>
+        </mat-menu>
+    </mat-toolbar>
+  </p>
+  

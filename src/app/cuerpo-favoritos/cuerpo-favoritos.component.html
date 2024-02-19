@@ -1,0 +1,74 @@
+<section class="cuerpo">
+  <div class="val">
+    <button mat-icon-button color="primary" class="valoracion" (click)="mostrar_valoraciones()">
+      <mat-icon>library_add</mat-icon>  Añadir valoración 
+    </button>
+  </div>
+
+  <div *ngIf="mostrar" class="estrellas">
+    <ul class="rate-area">
+      <input type="radio" (click)="addData(5)" id="5-star" name="crating" value="5">
+        <label for="5-star" title="Muy buena">5 stars</label>
+      <input type="radio" (click)="addData(4)" id="4-star" name="crating" value="4">
+        <label for="4-star" title="Buena">4 stars</label>
+      <input type="radio" (click)="addData(3)" id="3-star" name="crating" value="3">
+        <label for="3-star" title="Media">3 stars</label>
+      <input type="radio" (click)="addData(2)" id="2-star" name="crating" value="2">
+        <label for="2-star" title="Mala">2 stars</label>
+      <input type="radio" (click)="addData(1)" id="1-star" required=""
+        name="crating" value="1" aria-required="true">
+        <label for="1-star" title="Muy mala">1 star</label>
+    </ul>
+  </div>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table" *ngIf="favoritos">
+    <ng-container matColumnDef="prenda">
+      <th mat-header-cell *matHeaderCellDef>Prenda</th>
+      <td mat-cell *matCellDef="let element">{{element.prenda}}</td>
+    </ng-container>
+    <ng-container matColumnDef="resultado">
+      <th mat-header-cell *matHeaderCellDef>Resultado</th>
+      <td mat-cell *matCellDef="let element">{{element.resultado}}</td>
+    </ng-container>
+    <ng-container matColumnDef="origen">
+      <th mat-header-cell *matHeaderCellDef>Orígen</th>
+      <td mat-cell *matCellDef="let element">{{element.origen}}</td>
+    </ng-container>
+    <ng-container matColumnDef="destino">
+      <th mat-header-cell *matHeaderCellDef>Destino</th>
+      <td mat-cell *matCellDef="let element">{{element.destino}}</td>
+    </ng-container>
+    <ng-container matColumnDef="valoracion">
+      <th mat-header-cell *matHeaderCellDef>Valoración</th>
+      <td mat-cell *matCellDef="let element">{{element.valoracion}}</td>
+    </ng-container>
+    <ng-container matColumnDef="accion">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Acción </th>
+      <td mat-cell *matCellDef="let row"> 
+        <button mat-icon-button (click)="editData()" color="primary">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button (click)="removeData()" color="warn">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <br>
+  <div *ngIf="mostrar2" class="estrellas">
+    <ul class="rate-area">
+      <input type="radio" (click)="addData(5)" id="5-star" name="crating" value="5">
+        <label for="5-star" title="Muy buena">5 stars</label>
+      <input type="radio" (click)="addData(4)" id="4-star" name="crating" value="4">
+        <label for="4-star" title="Buena">4 stars</label>
+      <input type="radio" (click)="addData(3)" id="3-star" name="crating" value="3">
+        <label for="3-star" title="Media">3 stars</label>
+      <input type="radio" (click)="addData(2)" id="2-star" name="crating" value="2">
+        <label for="2-star" title="Mala">2 stars</label>
+      <input type="radio" (click)="addData(1)" id="1-star" required=""
+        name="crating" value="1" aria-required="true">
+        <label for="1-star" title="Muy mala">1 star</label>
+    </ul>
+  </div>
+</section>

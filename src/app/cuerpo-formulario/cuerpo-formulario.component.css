@@ -1,0 +1,49 @@
+.cuerpo{  
+    margin-top: -12px;
+    position: relative;
+    display: table;
+    position: relative;
+    background: #DCDCDC;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 1000px;
+    background-size: cover;
+    background-image: linear-gradient(to top, #fff, rgba(255, 255, 255, 0));
+  }
+
+.cuerpo h1{
+    font-size: 45px;
+    margin-top: 100px;
+    margin-left: 12%;
+    margin-bottom: 80px;
+  }
+
+.marca{
+  margin-left: -30%;
+}
+
+.formato{
+  margin-top: -200px;
+  margin-left: 32%;
+}
+ 
+
+.mat-form-field{
+  width: 250px;
+}
+
+.cuerpo h2{
+  font-size: 45px;
+  margin-top: 80px;
+  margin-left: 14%;
+  margin-bottom: 60px;
+}
+
+.mat-form-field input{
+  text-align: center;
+}
+
+.dos{
+  margin-left: 20px;
+}
